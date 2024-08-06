@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        /* Your styles here */
+     body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="registration-container">
+        <h2>Registration</h2>
+        <form id="registration-form">
+            <label for="reg-username">Username:</label>
+            <input type="text" id="reg-username" name="reg-username" required>
+
+            <label for="reg-password">Password:</label>
+            <input type="password" id="reg-password" name="reg-password" required>
+
+            <button type="button" onclick="registerUser()">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function registerUser() {
+            var regUsername = document.getElementById('reg-username').value;
+            var regPassword = document.getElementById('reg-password').value;
+
+            // You can add more sophisticated validation here
+
+            // For now, just check if both fields are filled
+            if (regUsername && regPassword) {
+                // Store registration details in localStorage (for simplicity)
+                localStorage.setItem('regUsername', regUsername);
+                localStorage.setItem('regPassword', regPassword);
+                alert('Registration successful! Redirecting to login page.');
+                // Redirect to the login page (replace 'signup_and_login.html' with the actual login page URL)
+                window.location.href = 'signup and login.html';
+            } else {
+                alert('Please enter both username and password for registration.');
+            }
+        }
+    </script>
+</body>
+</html>
